@@ -26,7 +26,7 @@ Swopp is planned to be hosted on NodeJS with MongoDB database. We'll be mostly u
 # Team
 Swopp core team consists of 3 friends:
 * **Doğa** - *Design & development* - [lasuax](https://github.com/lasuax)
-* **Gülbahar** - *UI, UX design & enginnering* - [gulbaharcelik](https://github.com/gulbaharcelik)
+* **Gülbahar** - *UI, UX design & engineering* - [gulbaharcelik](https://github.com/gulbaharcelik)
 * **Erkan** - *Frontend & backend operations* - [erkngncr](https://github.com/erkngncr)
 
 ## Contributing
