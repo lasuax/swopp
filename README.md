@@ -7,7 +7,7 @@ Swopp is an open-source project being developed 'three happy friends' for everyo
 ## Entry Point
 We have just realized that you can't keep a track on everything you love (and potentially be loved). You wouldn't want to miss a chance to go to a concert of one of your favourite bands WHEN YOU KNEW IT. And for the sake of the information, you need to follow a lot of sources to get it.
 
-## Conclusion
+## Solution
 Swopp is the key to this confusion. Instead of following too many sources, keeping tracks and begging for knowledge; you can just use Swopp. It will understand your needs and notify you when an opportunity is available.
 
 ## Behind the veil
@@ -26,7 +26,7 @@ Swopp is planned to be hosted on NodeJS with MongoDB database. We'll be mostly u
 # Team
 Swopp core team consists of 3 friends:
 * **Doğa** - *Design & development* - [lasuax](https://github.com/lasuax)
-* **Gülbahar** - *UI, UX design & enginnering* - [gulbaharcelik]((https://github.com/gulbaharcelik)
+* **Gülbahar** - *UI, UX design & enginnering* - [gulbaharcelik](https://github.com/gulbaharcelik)
 * **Erkan** - *Frontend & backend operations* - [erkngncr](https://github.com/erkngncr)
 
 ## Contributing
