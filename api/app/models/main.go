@@ -17,8 +17,15 @@ type User struct {
 
 // LoginModel model
 type LoginModel struct {
-	UserName string
+	Username string
 	Password string
+}
+
+// Validate loginmodel struct
+func (model *LoginModel) Validate(v *revel.Validation) {
+	v.Required(model.Username).Message("Username is required")
+	v.MinSize(model.Username, 3).Message("Username must be 3 characters at least")
+	v.Required(model.Password).Message("Password is required")
 }
 
 // Validate user struct

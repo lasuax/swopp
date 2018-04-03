@@ -1,13 +1,12 @@
 {{set . "title" "Giriş Sayfası"}} {{template "header.html" .}}
-
-<form class="ui form" action="/loginuser">
+<form class="ui form" action="{{url "Account.LoginUser"}}" method="POST">
     <div class="field">
         <label>First Name</label>
-        <input name="UserName" placeholder="First Name" type="text" value="{{.user.UserName}}">
+        <input name="Username" placeholder="Username" type="text" value="{{.u}}">
     </div>
     <div class="field">
         <label>Password</label>
-        <input name="Password" placeholder="Last Name" type="password" value="{{.user.Password}}">
+        <input name="Password" placeholder="****" type="password">
     </div>
     <div class="field">
         <div class="ui checkbox">
@@ -17,5 +16,5 @@
     </div>
     <button class="ui button" type="submit">Submit</button>
 </form>
-
+{{template "flash.html" .}}
 {{template "footer.html" .}}

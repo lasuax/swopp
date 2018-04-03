@@ -30,23 +30,32 @@ func (c Account) Register(user models.User) revel.Result {
 }
 
 // Login page
-func (c Account) Login(loginModel *models.LoginModel) revel.Result {
-	return c.Render(loginModel)
+func (c Account) Login(u string) revel.Result {
+	//model := loginModel
+	return c.Render(u)
 }
 
 // LoginUser submit login info
 func (c Account) LoginUser() revel.Result {
 	// Create model with parameters
 	model := models.LoginModel{
-		UserName: c.Params.Get("UserName"),
+		Username: c.Params.Get("Username"),
 		Password: c.Params.Get("Password"),
+	}
+
+	u := model.Username
+	model.Validate(c.Validation)
+	if c.Validation.HasErrors() {
+		c.Validation.Keep()
+		c.FlashParams()
+		return c.Redirect(Account.Login, u)
 	}
 	// User login logic
 	loginStatus := userLogin(model)
 
 	// Return to login screen with model if user login fails
 	if !loginStatus {
-		return c.Redirect(Account.Login, model)
+		return c.Redirect(Account.Login, u)
 	}
 
 	// After login logic
@@ -55,7 +64,7 @@ func (c Account) LoginUser() revel.Result {
 
 // Login service pseudo
 func userLogin(model models.LoginModel) bool {
-	return model.UserName == "doa" && model.Password == "1234"
+	return model.Username == "doa" && model.Password == "1234"
 }
 
 // RegisterUser API
