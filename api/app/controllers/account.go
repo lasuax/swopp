@@ -31,6 +31,7 @@ func (c Account) Register(user models.User) revel.Result {
 
 // Login page
 func (c Account) Login(u string) revel.Result {
+	var session
 	//model := loginModel
 	return c.Render(u)
 }
@@ -55,11 +56,14 @@ func (c Account) LoginUser() revel.Result {
 
 	// Return to login screen with model if user login fails
 	if !loginStatus {
+		c.Flash.Error("Invalid username or password")
 		return c.Redirect(Account.Login, u)
 	}
 
 	// After login logic
-	return c.Render(model)
+	c.Session["user"] = u
+	c.Flash.Success("Welcome, " + u)
+	return c.Redirect(App.Index)
 }
 
 // Login service pseudo

@@ -1,20 +1,26 @@
 {{set . "title" "Giriş Sayfası"}} {{template "header.html" .}}
-<form class="ui form" action="{{url "Account.LoginUser"}}" method="POST">
-    <div class="field">
-        <label>First Name</label>
-        <input name="Username" placeholder="Username" type="text" value="{{.u}}">
+
+<div class="container-login">
+    <div class="centerPage">
+        <form class="ui form" action="{{url "Account.LoginUser"}}" method="POST">
+            <div class="field">
+                <label>Username</label>
+                <input name="Username" placeholder="Username" type="text" value="{{.u}}">
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input name="Password" placeholder="****" type="password">
+            </div>
+            <div class="field">
+                <div class="ui slider checkbox">
+                    <input name="Remember" type="checkbox">
+                    <label>Remember me</label>
+                </div>
+            </div>
+            <button class="ui button" type="submit">Submit</button>
+        </form>
+        {{template "flash.html" .}}
+
     </div>
-    <div class="field">
-        <label>Password</label>
-        <input name="Password" placeholder="****" type="password">
-    </div>
-    <div class="field">
-        <div class="ui checkbox">
-            <input tabindex="0" class="hidden" type="checkbox">
-            <label>I agree to the Terms and Conditions</label>
-        </div>
-    </div>
-    <button class="ui button" type="submit">Submit</button>
-</form>
-{{template "flash.html" .}}
+</div>
 {{template "footer.html" .}}
